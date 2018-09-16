@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import './../styles/instructions.css'
 
 class Instructions extends Component {
+  itemValues = [
+    'data Item 1',
+    'data Item 2',
+    'data Item 3',
+    'data Item 4',
+    'de',
+    'data Item 6'
+  ]
+
   constructor(props) {
     super(props)
     this.state = { shouldDisplayImage: true }
@@ -22,6 +31,7 @@ class Instructions extends Component {
         <button onClick={this.handleToggleClick}>
           {this.state.shouldDisplayImage ? 'Hide' : 'Show'}
         </button>
+        <RenderList item={this.itemValues} />
       </div>
     )
   }
@@ -40,4 +50,20 @@ function ShowImage(props) {
     />
   )
 }
+
+function RenderList(props) {
+  var items = props.item
+
+  return (
+    <div className="listView">
+      {items.map(function(item) {
+        if (item.length > 2) {
+          var strToRendeer = item.toUpperCase()
+          return <div> - {strToRendeer} </div>
+        }
+      })}
+    </div>
+  )
+}
+
 export default Instructions
