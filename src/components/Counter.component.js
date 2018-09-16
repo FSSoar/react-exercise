@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
 
 class Counter extends Component {
-  itemValues = [
-    'data Item 1',
-    'data Item 2',
-    'data Item 3',
-    'data Item 4',
-    'de',
-    'data Item 6'
-  ]
+  state = { count: 0 }
 
-  constructor(props) {
-    super(props)
-    this.state = { count: 0 }
+  handleDecrementClick = () => {
+    this.setState({ count: this.state.count - 1 })
   }
-
+  handleIncrementClick = () => {
+    this.setState({ count: this.state.count + 1 })
+  }
   render() {
-    return <h1>0</h1>
+    return (
+      <div className="counter">
+        <center>
+          <h1>Counter</h1>
+          <h1>{this.state.count} </h1>
+          <button onClick={this.handleDecrementClick}> - </button>
+          <button onClick={this.handleIncrementClick}> + </button>
+        </center>
+      </div>
+    )
   }
 }
 
