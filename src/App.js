@@ -2,34 +2,13 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Instructions } from './components'
 import { Counter } from './components'
+import { InitialCountForm } from './components'
 import './styles/app.css'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <h1>Hello World!</h1>
-        <Instructions />
-
-        <h1> counter </h1>
-        <div>
-          <center>
-            <input id="inputField" type="text" />
-            <button onClick={this.handleClick} type="button">
-              {' '}
-              Submit{' '}
-            </button>
-          </center>
-        </div>
-
-        <div id="counter"> </div>
-      </div>
-    )
-  }
-
+  //THIS FUNCTION HANDLES THE CLICK FROM THE BUTTON IN THE InitialCountForm
   handleClick = () => {
     ReactDOM.unmountComponentAtNode(document.getElementById('counter'))
-
     var text = document.getElementById('inputField').value
     //DATA VALIDATION THEN OUTPUT
     if (isNaN(text) == false) {
@@ -39,6 +18,19 @@ class App extends Component {
       const element = <h1>Please input a Number </h1>
       ReactDOM.render(element, document.getElementById('counter'))
     }
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <h1>Hello World!</h1>
+        <Instructions />
+
+        <h1> counter </h1>
+        <InitialCountForm handleClick={this.handleClick} />
+        <div id="counter"> </div>
+      </div>
+    )
   }
 }
 
