@@ -5,7 +5,11 @@ const InitialCountForm = props => {
   return (
     <div id="countForm">
       <center>
-        <input id="inputField" type="text" />
+        <input
+          id="inputField"
+          placeholder="Input a Number to Start Counter"
+          type="text"
+        />
         <button onClick={props.handleClick} type="button">
           Submit
         </button>

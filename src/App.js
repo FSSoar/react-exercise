@@ -24,11 +24,15 @@ class App extends Component {
     return (
       <div className="app">
         <h1>Hello World!</h1>
+
         <Instructions />
 
-        <h1> counter </h1>
-        <InitialCountForm handleClick={this.handleClick} />
-        <div id="counter"> </div>
+        <div class="horizontalLine"> </div>
+        <h1 id="CounterLabel"> Counter </h1>
+        <div id="RowDiv">
+          <InitialCountForm handleClick={this.handleClick} />
+          <div id="counter"> </div>
+        </div>
       </div>
     )
   }

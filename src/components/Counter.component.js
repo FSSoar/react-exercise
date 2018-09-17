@@ -19,8 +19,14 @@ class Counter extends Component {
       <div className="counter">
         <center>
           <h1>{this.state.count} </h1>
-          <button onClick={this.handleDecrementClick}> - </button>
-          <button onClick={this.handleIncrementClick}> + </button>
+          <button class="OperationsButtons" onClick={this.handleDecrementClick}>
+            {' '}
+            -{' '}
+          </button>
+          <button class="OperationsButtons" onClick={this.handleIncrementClick}>
+            {' '}
+            +{' '}
+          </button>
         </center>
       </div>
     )

@@ -27,10 +27,12 @@ class Instructions extends Component {
     return (
       <div className="instructions">
         Follow the instructions on the README to get started!
+        <div class="horizontalLine"> </div>
         <ShowImage show={this.state.shouldDisplayImage} />
         <button onClick={this.handleToggleClick}>
           {this.state.shouldDisplayImage ? 'Hide' : 'Show'}
         </button>
+        <div class="horizontalLine"> </div>
         <RenderList item={this.itemValues} />
       </div>
     )
@@ -56,12 +58,15 @@ function RenderList(props) {
 
   return (
     <div className="listView">
-      {items.map(function(item) {
-        if (item.length > 2) {
-          var strToRendeer = item.toUpperCase()
-          return <div> - {strToRendeer} </div>
-        }
-      })}
+      <h1>List</h1>
+      <ul>
+        {items.map(function(item) {
+          if (item.length > 2) {
+            var strToRendeer = item.toUpperCase()
+            return <li> {strToRendeer} </li>
+          }
+        })}
+      </ul>
     </div>
   )
 }
